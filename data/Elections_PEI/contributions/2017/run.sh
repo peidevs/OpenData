@@ -67,4 +67,16 @@ groovy $SRC/Verify.groovy $STANDARD/all_2017.csv $STANDARD/pc_2017.csv $HEADER_C
 
 groovy $SRC/GenerateTableViz.groovy $STANDARD/all_2017.csv $VIZ/template_table.html $VIZ/table.html
 
+# ---------- cross-ref
+
+groovy $SRC/CrossRef.groovy $STANDARD/all_2017.csv > $STANDARD/crossref_2017.csv
+
+# ---------- verify
+
+groovy $SRC/VerifyCrossRef.groovy $STANDARD/all_2017.csv $STANDARD/crossref_2017.csv
+
+# ---------- generate
+
+groovy $SRC/GenerateTableViz.groovy $STANDARD/crossref_2017.csv $VIZ/template_crossref.html $VIZ/crossref.html
+
 echo "Ready."

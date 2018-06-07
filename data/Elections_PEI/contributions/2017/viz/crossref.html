@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<meta charset="utf-8">
+<html>
+
+<head>
+
+<title>Visualization of Elections PEI Data (2017)</title>
+<style type="text/css">
+* {
+font-size: 100%;
+font-family: Verdana;
+}
+html, body {
+height: 100%;
+}
+</style>
+
+<!--         script       -->
+
+<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+
+<script type="text/javascript">
+  google.charts.load('current', {'packages':['table']});
+  google.charts.setOnLoadCallback(drawTable);
+
+  function drawTable() {
+    var data = new google.visualization.DataTable();
+
+    data.addColumn('string', 'Party');
+    data.addColumn('string', 'Last Name');
+    data.addColumn('string', 'First Name');
+    data.addColumn('string', 'Business Name');
+    data.addColumn('string', 'City');
+    data.addColumn('string', 'Prov');
+    data.addColumn('number', 'Amount');
+
+    data.addRows([
+[{v: 'PC', f: '<div style="color: blue;">PC</div>'},'3 Points Aviation','','','Charlottetown','',{v: 1076.2, f: '$1,076.20'}],
+[{v: 'Liberal', f: '<div style="color: red;">Liberal</div>'},'3 Points Aviation ','','','Charlottetown','PE',{v: 269.14, f: '$269.14'}],
+[{v: 'Liberal', f: '<div style="color: red;">Liberal</div>'},'Arsenault\'s Fish Mart','','','Wellington Station','PE',{v: 992.97, f: '$992.97'}],
+[{v: 'PC', f: '<div style="color: blue;">PC</div>'},'Arsenault\'s Fish Mart','','','Wellington','',{v: 489.08, f: '$489.08'}],
+[{v: 'Liberal', f: '<div style="color: red;">Liberal</div>'},'Bell Canada','','','Montreal','QC',{v: 4233.24, f: '$4,233.24'}],
+[{v: 'PC', f: '<div style="color: blue;">PC</div>'},'Bell Canada','','','Montreal','',{v: 4220.48, f: '$4,220.48'}],
+[{v: 'Liberal', f: '<div style="color: red;">Liberal</div>'},'BioVectra Inc.','','','Charlottetown','PE',{v: 1058.31, f: '$1,058.31'}],
+[{v: 'PC', f: '<div style="color: blue;">PC</div>'},'BioVectra Inc.','','','Charlottetown','',{v: 821.12, f: '$821.12'}],
+[{v: 'Liberal', f: '<div style="color: red;">Liberal</div>'},'Brighton Construction Inc.','','','Charlottetown','PE',{v: 1477.21, f: '$1,477.21'}],
+[{v: 'PC', f: '<div style="color: blue;">PC</div>'},'Brighton Construction Inc.','','','Charlottetown','',{v: 846.64, f: '$846.64'}],
+[{v: 'Liberal', f: '<div style="color: red;">Liberal</div>'},'Bulk Carriers (P.E.I.) Limited','','','Cornwall','PE',{v: 1109.59, f: '$1,109.59'}],
+[{v: 'PC', f: '<div style="color: blue;">PC</div>'},'Bulk Carriers (P.E.I.) Limited','','','Cornwall','',{v: 821.12, f: '$821.12'}],
+[{v: 'Liberal', f: '<div style="color: red;">Liberal</div>'},'Campbell\'s Concrete Ltd.','','','Charlottetown','PE',{v: 1058.31, f: '$1,058.31'}],
+[{v: 'PC', f: '<div style="color: blue;">PC</div>'},'Campbell\'s Concrete Ltd.','','','Charlottetown','',{v: 821.12, f: '$821.12'}],
+[{v: 'Liberal', f: '<div style="color: red;">Liberal</div>'},'Canadian International Capital Inc.','','','Halifax','NS',{v: 789.17, f: '$789.17'}],
+[{v: 'PC', f: '<div style="color: blue;">PC</div>'},'Canadian International Capital Inc.','','','Halifax','',{v: 410.56, f: '$410.56'}],
+[{v: 'Liberal', f: '<div style="color: red;">Liberal</div>'},'Cows Inc.','','','Charlottetown','PE',{v: 923.74, f: '$923.74'}],
+[{v: 'PC', f: '<div style="color: blue;">PC</div>'},'COWS Inc.','','','Charlottetown','',{v: 410.56, f: '$410.56'}],
+[{v: 'Liberal', f: '<div style="color: red;">Liberal</div>'},'Cox & Palmer','','','Charlottetown','PE',{v: 6012.2, f: '$6,012.20'}],
+[{v: 'PC', f: '<div style="color: blue;">PC</div>'},'Cox & Palmer','','','Charlottetown','',{v: 4649.72, f: '$4,649.72'}],
+[{v: 'Liberal', f: '<div style="color: red;">Liberal</div>'},'Curran &  Briggs Limited','','','Summerside','PE',{v: 1186.65, f: '$1,186.65'}],
+[{v: 'PC', f: '<div style="color: blue;">PC</div>'},'Curran & Briggs Limited','','','Summerside','',{v: 410.56, f: '$410.56'}],
+[{v: 'Liberal', f: '<div style="color: red;">Liberal</div>'},'D. P. Murphy Inc.','','','Charlottetown','PE',{v: 1058.31, f: '$1,058.31'}],
+[{v: 'PC', f: '<div style="color: blue;">PC</div>'},'D.P. Murphy Inc.','','','Charlottetown','',{v: 410.56, f: '$410.56'}],
+[{v: 'Liberal', f: '<div style="color: red;">Liberal</div>'},'Ellis','Warren','','Summerside','PE',{v: 1436.42, f: '$1,436.42'}],
+[{v: 'PC', f: '<div style="color: blue;">PC</div>'},'Ellis','Warren','','Summerside','',{v: 5334.48, f: '$5,334.48'}],
+[{v: 'Liberal', f: '<div style="color: red;">Liberal</div>'},'Fitzgerald and  Snow (2010) Ltd.','','','Summerside','PE',{v: 789.17, f: '$789.17'}],
+[{v: 'PC', f: '<div style="color: blue;">PC</div>'},'Fitzgerald and Snow (2010) Ltd.','','','Summerside','',{v: 821.12, f: '$821.12'}],
+[{v: 'Liberal', f: '<div style="color: red;">Liberal</div>'},'Gaudette\'s Transit Mix Ltd.','','','Tignish','PE',{v: 2194.62, f: '$2,194.62'}],
+[{v: 'PC', f: '<div style="color: blue;">PC</div>'},'Gaudette\'s Transit Mix Ltd.','','','Tignish','',{v: 1642.24, f: '$1,642.24'}],
+[{v: 'Liberal', f: '<div style="color: red;">Liberal</div>'},'Grant Thornton LLP','','','Charlottetown','PE',{v: 3444.07, f: '$3,444.07'}],
+[{v: 'PC', f: '<div style="color: blue;">PC</div>'},'Grant Thornton LLP','','','Charlottetown','',{v: 2304.24, f: '$2,304.24'}],
+[{v: 'Liberal', f: '<div style="color: red;">Liberal</div>'},'group M5','','','Charlottetown','PE',{v: 1058.31, f: '$1,058.31'}],
+[{v: 'PC', f: '<div style="color: blue;">PC</div>'},'Group m5','','','Charlottetown','',{v: 489.08, f: '$489.08'}],
+[{v: 'Liberal', f: '<div style="color: red;">Liberal</div>'},'Hansen Electric Ltd.','','','Charlottetown','PE',{v: 1058.31, f: '$1,058.31'}],
+[{v: 'PC', f: '<div style="color: blue;">PC</div>'},'Hansen Electric Ltd.','','','Charlottetown','',{v: 665.64, f: '$665.64'}],
+[{v: 'Liberal', f: '<div style="color: red;">Liberal</div>'},'Innovative Medicines Canada','','','Ottawa','ON',{v: 789.17, f: '$789.17'}],
+[{v: 'PC', f: '<div style="color: blue;">PC</div>'},'Innovative Medicines Canada','','','Ottawa','',{v: 821.12, f: '$821.12'}],
+[{v: 'Liberal', f: '<div style="color: red;">Liberal</div>'},'Insurance Bureau Of Canada','','','Halifax','NS',{v: 1578.34, f: '$1,578.34'}],
+[{v: 'PC', f: '<div style="color: blue;">PC</div>'},'Insurance Bureau of Canada','','','Halifax','',{v: 255.08, f: '$255.08'}],
+[{v: 'Liberal', f: '<div style="color: red;">Liberal</div>'},'Insurance Bureau Of Canada','','','Halifax','NS',{v: 1076.56, f: '$1,076.56'}],
+[{v: 'PC', f: '<div style="color: blue;">PC</div>'},'Insurance Bureau of Canada','','','Halifax','',{v: 255.08, f: '$255.08'}],
+[{v: 'Liberal', f: '<div style="color: red;">Liberal</div>'},'Island Coastal Services Ltd.','','','Charlottetown','PE',{v: 2808.74, f: '$2,808.74'}],
+[{v: 'PC', f: '<div style="color: blue;">PC</div>'},'Island Coastal Services Ltd.','','','Charlottetown','',{v: 510.56, f: '$510.56'}],
+[{v: 'Liberal', f: '<div style="color: red;">Liberal</div>'},'Kenmac Energy Inc.','','','Charlottetown','PE',{v: 1419.58, f: '$1,419.58'}],
+[{v: 'PC', f: '<div style="color: blue;">PC</div>'},'Kenmac Energy Inc.','','','Charlottetown','',{v: 410.56, f: '$410.56'}],
+[{v: 'Liberal', f: '<div style="color: red;">Liberal</div>'},'Key Murray Law','','','Charlottetown','PE',{v: 1865.73, f: '$1,865.73'}],
+[{v: 'PC', f: '<div style="color: blue;">PC</div>'},'Key Murray Law','','','Summerside','',{v: 500, f: '$500.00'}],
+[{v: 'Liberal', f: '<div style="color: red;">Liberal</div>'},'Key Murray Law','','','Charlottetown','PE',{v: 1865.73, f: '$1,865.73'}],
+[{v: 'PC', f: '<div style="color: blue;">PC</div>'},'Key Murray Law','','','Charlottetown','',{v: 410.56, f: '$410.56'}],
+[{v: 'Liberal', f: '<div style="color: red;">Liberal</div>'},'M & M Resources Inc.','','','Village Green','PE',{v: 1142.77, f: '$1,142.77'}],
+[{v: 'PC', f: '<div style="color: blue;">PC</div>'},'M & M Resources Inc.','','','Village Green','',{v: 1000, f: '$1,000.00'}],
+[{v: 'Liberal', f: '<div style="color: red;">Liberal</div>'},'MacPherson Roche Smith & Associates','','','Charlottetown','PE',{v: 2287.01, f: '$2,287.01'}],
+[{v: 'PC', f: '<div style="color: blue;">PC</div>'},'MacPherson Roche Smith & Associates','','','Charlottetown','',{v: 1776.2, f: '$1,776.20'}],
+[{v: 'Liberal', f: '<div style="color: red;">Liberal</div>'},'MacPherson','Stan','','Charlottetown','PE',{v: 401.04, f: '$401.04'}],
+[{v: 'PC', f: '<div style="color: blue;">PC</div>'},'MacPherson','Stan','','Charlottetown','',{v: 500, f: '$500.00'}],
+[{v: 'PC', f: '<div style="color: blue;">PC</div>'},'Maximus Canada - Deltaware Division','','','Charlottetown','',{v: 1002.12, f: '$1,002.12'}],
+[{v: 'Liberal', f: '<div style="color: red;">Liberal</div>'},'Maximus Canada-Deltaware Division','','','Charlottetown','PE',{v: 1344.31, f: '$1,344.31'}],
+[{v: 'Liberal', f: '<div style="color: red;">Liberal</div>'},'MCA Consultants Inc.','','','Charlottetown','PE',{v: 1058.31, f: '$1,058.31'}],
+[{v: 'PC', f: '<div style="color: blue;">PC</div>'},'MCA Consultants Inc.','','','Charlottetown','',{v: 821.12, f: '$821.12'}],
+[{v: 'Liberal', f: '<div style="color: red;">Liberal</div>'},'Murphy','Ray','','Stratford','PE',{v: 616.4, f: '$616.40'}],
+[{v: 'PC', f: '<div style="color: blue;">PC</div>'},'Murphy','Ray','','Charlottetown','',{v: 300, f: '$300.00'}],
+[{v: 'Liberal', f: '<div style="color: red;">Liberal</div>'},'Peake & McInnis Ltd.','','','Charlottetown','PE',{v: 1488.15, f: '$1,488.15'}],
+[{v: 'PC', f: '<div style="color: blue;">PC</div>'},'Peake & McInnis Ltd.','','','Charlottetown','',{v: 948.67, f: '$948.67'}],
+[{v: 'Liberal', f: '<div style="color: red;">Liberal</div>'},'Prince Edward Aqua Farms Inc.','','','Kensington','PE',{v: 538.28, f: '$538.28'}],
+[{v: 'PC', f: '<div style="color: blue;">PC</div>'},'Prince Edward Aqua Farms Inc.','','','Kensington','',{v: 772.56, f: '$772.56'}],
+[{v: 'Liberal', f: '<div style="color: red;">Liberal</div>'},'Royal Star Foods Ltd.','','','Tignish','PE',{v: 269.14, f: '$269.14'}],
+[{v: 'PC', f: '<div style="color: blue;">PC</div>'},'Royal Star Foods Ltd.','','','Tignish','',{v: 821.12, f: '$821.12'}],
+
+    ]);
+
+    var table = new google.visualization.Table(document.getElementById('table_div'));
+
+    data.setProperty(0, 0, 'style', 'width:100px');
+    data.setProperty(0, 1, 'style', 'width:300px');
+    data.setProperty(0, 2, 'style', 'width:100px');
+    data.setProperty(0, 3, 'style', 'width:100px');
+
+    table.draw(data, {showRowNumber: true, width: '100%', height: '75%', allowHtml: true});
+  }
+
+</script>
+
+</head>
+
+<!--         body       -->
+
+<body>
+<div align="center" style="font-size: medium;">A visualization of Elections PEI data set: <a href="http://www.electionspei.ca/index.php?number=1046908&lang=E">"lists of contributions in excess of $250 for year 2017"<a></div>
+<div align="center" style="font-size: medium;">Contains information licenced under the <a
+href="http://www.gov.pe.ca/photos/original/EPEI_ODLICENCE.pdf">Elections PEI Open Data Licence<a>.</div>
+<br/>
+<div align="center" style="font-size: small;">Cross-reference of $250+ donations to multiple parties, where names are similar</div>
+<div align="center" style="font-size: small;">Columns are sortable. Sheet is scrollable.</div>
+<div align="center" style="font-size: small;"><a href="https://github.com/peidevs/OpenDataBookClub/blob/master/doc/LocalResources.md">Other visualizations here</a></div>
+<br/>
+<div align="right" style="font-size: small;">by <a href="http://peidevs.github.io/">PEI Developers</a></div>
+<div align="right" style="font-size: small;">extracted data <a href="https://github.com/peidevs/OpenData/tree/master/data/Elections_PEI/contributions/2017/data/original/EPEI_2017">here</a> & source <a href="https://github.com/peidevs/OpenData/tree/master/data/Elections_PEI/contributions/2017">here</a></div>
+<div align="right" style="font-size: small;">uses <a href="https://developers.google.com/chart/interactive/docs/gallery/table">Google Charts</a></div>
+
+<hr/>
+
+<div id="dashboard">
+    <div id="string_filter_div"></div>
+    <div id="table_div" style="height: 95%;"></div>
+</div>
+
+</body>
+
+</html>

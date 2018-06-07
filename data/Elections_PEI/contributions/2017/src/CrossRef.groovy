@@ -15,6 +15,7 @@ class Info {
     def lastName = ""
     def city = ""
     def total = 0
+    def originalLine = ""
 
     static String q(def s) {
         def dq = '"'
@@ -30,7 +31,7 @@ class Info {
     }
 }
 
-def parseFile = { def text, def infos  ->
+def parseFile = { def text, def infos, def originalLine ->
     def results = []
     results.addAll(infos)
 
@@ -46,7 +47,8 @@ def parseFile = { def text, def infos  ->
 
             if (firstName || lastName) {
                 def info = new Info(party: party, firstName: firstName, 
-                                    lastName: lastName, city: city, total: total) 
+                                    lastName: lastName, city: city, total: total,
+                                    originalLine: originalLine)
                 results << info
             } else {
                 System.err.println "TRACER: skipping " + line
@@ -89,6 +91,7 @@ assert true == compare("cox & palmer", "palmer cox &")
 assert true == compare('ElectricMaritime', 'Maritime Electric') 
 
 def processPair = { def map, def party, def otherParty ->
+    def results = []
     def partyInfos = map[party]
     def otherPartyInfos = map[otherParty]
     partyInfos.each { partyInfo ->
@@ -98,15 +101,20 @@ def processPair = { def map, def party, def otherParty ->
             def isMatch = compare(partyName, otherPartyName) 
 
             if (isMatch) {
-                println "contrib 1: " + partyInfo.toString()
-                println "contrib 2: " + otherPartyInfo.toString()
-                println "----------"
+                results << partyInfo
+                results << otherPartyInfo
+                // println "contrib 1: " + partyInfo.toString()
+                // println "contrib 2: " + otherPartyInfo.toString()
+                // println "----------"
             }
         }
     }
+
+    return results
 }
 
 def processMap = { def map ->
+    def results = []
     def parties = map.keySet()
     def alreadyProcessed = [:].withDefault { false }
 
@@ -116,17 +124,20 @@ def processMap = { def map ->
             def pairKey = ""
             [party, otherParty].sort().each { pairKey += it }
             if (! alreadyProcessed[pairKey]) {
-                processPair(map, party, otherParty)
+                def tmpResults = processPair(map, party, otherParty)
+                results.addAll(tmpResults)
                 alreadyProcessed[pairKey] = true
             }
         }
     }
+
+    return results
 }
 
 // --------- main 
 
 if (args.size() < 1) {
-    println "Usage: groovy Viewer.groovy infile"
+    println "Usage: groovy usage"
     System.exit(-1)
 }
 
@@ -142,11 +153,23 @@ new File(infile).eachLine { line ->
         isHeader = false
     } else {
         def text = "${header}\n${line}\n"
-        infos = parseFile(text, infos)
+        infos = parseFile(text, infos, line)
     } 
 }
 
 def map = infos.groupBy { it.party }
-processMap(map)
+def results = processMap(map)
+results.sort { a, b -> 
+    def aStr = "${a.firstName}${a.lastName}".toUpperCase()
+    def bStr = "${b.firstName}${b.lastName}".toUpperCase()
+    return aStr <=> bStr
+}
 
+def originalLines = new File(infile).getText()
+
+println header 
+
+results.each { result ->
+    println result.originalLine
+}
 

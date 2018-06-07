@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<meta charset="utf-8">
+<html>
+
+<head>
+
+<title>Visualization of Elections PEI Data (2017)</title>
+<style type="text/css">
+* {
+font-size: 100%;
+font-family: Verdana;
+}
+html, body {
+height: 100%;
+}
+</style>
+
+<!--         script       -->
+
+<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+
+<script type="text/javascript">
+  google.charts.load('current', {'packages':['table']});
+  google.charts.setOnLoadCallback(drawTable);
+
+  function drawTable() {
+    var data = new google.visualization.DataTable();
+
+    data.addColumn('string', 'Party');
+    data.addColumn('string', 'Last Name');
+    data.addColumn('string', 'First Name');
+    data.addColumn('string', 'Business Name');
+    data.addColumn('string', 'City');
+    data.addColumn('string', 'Prov');
+    data.addColumn('number', 'Amount');
+
+    data.addRows([
+        ELECTIONS_PEI_DATA_ROWS
+    ]);
+
+    var table = new google.visualization.Table(document.getElementById('table_div'));
+
+    data.setProperty(0, 0, 'style', 'width:100px');
+    data.setProperty(0, 1, 'style', 'width:300px');
+    data.setProperty(0, 2, 'style', 'width:100px');
+    data.setProperty(0, 3, 'style', 'width:100px');
+
+    table.draw(data, {showRowNumber: true, width: '100%', height: '75%', allowHtml: true});
+  }
+
+</script>
+
+</head>
+
+<!--         body       -->
+
+<body>
+<div align="center" style="font-size: medium;">A visualization of Elections PEI data set: <a href="http://www.electionspei.ca/index.php?number=1046908&lang=E">"lists of contributions in excess of $250 for year 2017"<a></div>
+<div align="center" style="font-size: medium;">Contains information licenced under the <a
+href="http://www.gov.pe.ca/photos/original/EPEI_ODLICENCE.pdf">Elections PEI Open Data Licence<a>.</div>
+<br/>
+<div align="center" style="font-size: small;">Cross-reference of $250+ donations to multiple parties, where names are similar</div>
+<div align="center" style="font-size: small;">Columns are sortable. Sheet is scrollable.</div>
+<div align="center" style="font-size: small;"><a href="https://github.com/peidevs/OpenDataBookClub/blob/master/doc/LocalResources.md">Other visualizations here</a></div>
+<br/>
+<div align="right" style="font-size: small;">by <a href="http://peidevs.github.io/">PEI Developers</a></div>
+<div align="right" style="font-size: small;">extracted data <a href="https://github.com/peidevs/OpenData/tree/master/data/Elections_PEI/contributions/2017/data/original/EPEI_2017">here</a> & source <a href="https://github.com/peidevs/OpenData/tree/master/data/Elections_PEI/contributions/2017">here</a></div>
+<div align="right" style="font-size: small;">uses <a href="https://developers.google.com/chart/interactive/docs/gallery/table">Google Charts</a></div>
+
+<hr/>
+
+<div id="dashboard">
+    <div id="string_filter_div"></div>
+    <div id="table_div" style="height: 95%;"></div>
+</div>
+
+</body>
+
+</html>
