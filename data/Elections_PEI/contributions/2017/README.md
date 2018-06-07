@@ -12,7 +12,10 @@
     * normalize the data into a standard format
     * join CSV files into `all_2017.csv`
     * perform verification to double-check the amounts in the new file match the amounts in the original file, per party
-    * generate the final [table.html](viz/table.html)
+    * generate [table.html](viz/table.html)
+        * this is a list of all donations in excess of $250
+    * generate [crossref.html](viz/crossref.html)
+        * this is a list of donations in excess of $250 to multiple parties, where the names are similar
  
 ### License
 
