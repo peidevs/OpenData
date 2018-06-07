@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<meta charset="utf-8">
+<html>
+
+<head>
+
+<title>Visualization of Elections PEI Data (2017)</title>
+<style type="text/css">
+* {
+font-size: 100%;
+font-family: Verdana;
+}
+html, body {
+height: 100%;
+}
+</style>
+
+<!--         script       -->
+
+<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+
+<script type="text/javascript">
+  google.charts.load('current', {'packages':['corechart']});
+  google.charts.setOnLoadCallback(drawChart);
+
+  function drawChart() {
+    var data = google.visualization.arrayToDataTable([
+      ['City', 'PC', 'Liberal', 'NDP', 'Green'],
+ELECTIONS_PEI_DATA_ROWS
+      ]);
+
+    var options = {
+      isStacked: 'relative',
+      legend: {position: 'top'},
+      height: 500,
+      width: 1400,
+      vAxis: {
+        minValue: 0,
+        ticks: [0, .3, .6, .9, 1]
+      },
+      chartArea: {
+        left: 60,
+        top: 50,
+        width: 1400,
+        height: 350
+      }
+    };
+
+    var chart = new google.visualization.SteppedAreaChart(document.getElementById('chart_div'));
+    chart.draw(data, options);
+  }
+</script>
+
+</head>
+
+<!--         body       -->
+
+<body>
+<div align="center" style="font-size: medium;">A visualization of Elections PEI data set: <a href="http://www.electionspei.ca/index.php?number=1046908&lang=E">"lists of contributions in excess of $250 for year 2017"<a></div>
+<div align="center" style="font-size: medium;">Contains information licenced under the <a
+href="http://www.gov.pe.ca/photos/original/EPEI_ODLICENCE.pdf">Elections PEI Open Data Licence<a>.</div>
+<br/>
+
+<div align="center" style="font-size: small; font-weight: bold;">For every city, show the contributions per party as fraction of the total.</div>
+<div align="center" style="font-size: small;">Hover over a section for the amount.</div>
+<div align="center" style="font-size: small;">e.g. Charlottetown contributions are 28% PC, 64% Liberal, 2% NDP, 4% Green</div>
+<div align="center" style="font-size: small;"><a href="https://github.com/peidevs/OpenDataBookClub/blob/master/doc/LocalResources.md">Other visualizations here</a></div>
+<br/>
+
+<div align="right" style="font-size: small;">by <a href="http://peidevs.github.io/">PEI Developers</a></div>
+<div align="right" style="font-size: small;">extracted data <a href="https://github.com/peidevs/OpenData/tree/master/data/Elections_PEI/contributions/2017/data/original/EPEI_2017">here</a> & source <a href="https://github.com/peidevs/OpenData/tree/master/data/Elections_PEI/contributions/2017">here</a></div>
+<div align="right" style="font-size: small;">uses <a href="https://developers.google.com/chart/interactive/docs/gallery/table">Google Charts</a></div>
+
+<hr/>
+
+<div id="chart_div"></div>
+
+</body>
+
+</html>

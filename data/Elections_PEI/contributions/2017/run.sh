@@ -79,4 +79,16 @@ groovy $SRC/VerifyCrossRef.groovy $STANDARD/all_2017.csv $STANDARD/crossref_2017
 
 groovy $SRC/GenerateTableViz.groovy $STANDARD/crossref_2017.csv $VIZ/template_crossref.html $VIZ/crossref.html
 
+# ---------- by-city
+
+groovy $SRC/ByCity.groovy $STANDARD/all_2017.csv > $STANDARD/bycity_2017.data
+
+# ---------- verify
+
+groovy $SRC/VerifyByCity.groovy $STANDARD/all_2017.csv $STANDARD/bycity_2017.data
+
+# ---------- generate
+
+groovy $SRC/GenerateByCityViz.groovy $STANDARD/bycity_2017.data $VIZ/template_bycity.html $VIZ/bycity.html
+
 echo "Ready."
