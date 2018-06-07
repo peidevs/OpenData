@@ -3,7 +3,7 @@
 
 * Original data is [here](http://www.electionspei.ca/index.php?number=1046908&lang=E)
     * extracted data is located [here](data/original) in this repository.
-* This project ~contains information licenced under the [Elections PEI Open Data Licence](href="http://www.gov.pe.ca/photos/original/EPEI_ODLICENCE.pdf). 
+* This project _contains information licenced under the [Elections PEI Open Data Licence](href="http://www.gov.pe.ca/photos/original/EPEI_ODLICENCE.pdf)_. 
 
 ### Code & Visualization
 
