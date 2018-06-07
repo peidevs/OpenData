@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<meta charset="utf-8">
+<html>
+
+<head>
+
+<title>Visualization of Elections PEI Data (2017)</title>
+<style type="text/css">
+* {
+font-size: 100%;
+font-family: Verdana;
+}
+html, body {
+height: 100%;
+}
+</style>
+
+<!--         script       -->
+
+<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+
+<script type="text/javascript">
+  google.charts.load('current', {'packages':['corechart']});
+  google.charts.setOnLoadCallback(drawChart);
+
+  function drawChart() {
+    var data = google.visualization.arrayToDataTable([
+      ['City', 'PC', 'Liberal', 'NDP', 'Green'],
+["Albany",500.00,0,0,800.00],
+["Alberton",0,512.47,0,0],
+["Belfast",510.56,0,0,0],
+["Belle River",948.66,0,0,0],
+["Bloomfield",500.00,0,0,0],
+["Bonshaw",1776.20,791.30,0,1310.00],
+["Borden-Carleton",2821.12,1423.31,0,0],
+["Brackley",0,400.00,0,0],
+["Brackley Beach",0,1451.34,0,0],
+["Breadalbane",2321.12,789.17,0,0],
+["Bunbury",327.54,0,0,0],
+["Calgary",0,5789.17,0,0],
+["Canoe Cove",0,478.84,0,0],
+["Cardigan",1841.84,1058.31,0,0],
+["Carp",0,923.74,0,0],
+["Central Bedeque",0,394.59,0,0],
+["Charlottetown",67406.65,155605.70,6400.00,10549.00],
+["Clinton",0,0,0,900.00],
+["Cocagne",0,1058.31,0,0],
+["Coleman",0,0,375.00,0],
+["Cornwall",5069.48,12415.14,295.00,260.00],
+["Crapaud",2416.20,789.17,0,0],
+["Cumberland",0,574.88,0,440.00],
+["Dieppe",0,3694.96,0,0],
+["Donagh",555.08,0,0,0],
+["Dunstaffnage",0,789.17,0,0],
+["Ellerslie",0,2597.92,0,265.00],
+["Elmwood",1000.00,0,0,0],
+["Elwood",2665.64,0,0,0],
+["Enfield",0,1075.45,0,0],
+["Etobicoke",0,0,1500.00,0],
+["Fairfield",1500.00,0,0,0],
+["Florenceville-Bristol",0,269.14,0,0],
+["Fort Augustus",0,1330.53,0,0],
+["Georgetown",0,1076.56,0,0],
+["Halifax",665.64,8033.26,2500.00,0],
+["Hamilton",0,789.17,0,0],
+["Hampton",0,0,0,1110.00],
+["Harrington",0,1058.31,0,0],
+["Howlan",0,0,595.00,0],
+["Hunter River",993.18,636.98,0,1758.50],
+["Kensington",2864.56,1959.59,0,400.00],
+["Kinkora",350.00,2615.04,0,0],
+["Lower Freetown",410.56,0,0,0],
+["Meadowbank",0,391.70,0,310.00],
+["Mermaid",1826.76,0,895.00,280.00],
+["Middleton",500.00,0,0,0],
+["Millview",0,0,1135.00,0],
+["Milton Station",0,789.17,0,0],
+["Miminegash",821.12,0,0,0],
+["Miscouche",0,692.28,0,0],
+["Montague",7432.70,6917.77,0,0],
+["Montreal",4220.48,5022.41,0,0],
+["Morell",2001.68,1058.31,0,0],
+["Mount Herbert",255.08,0,0,0],
+["Mount Pearl",0,789.17,0,0],
+["Mount Stewart",1298.66,0,0,0],
+["Mt Stewart",1760.18,0,0,0],
+["Murray River",2818.86,2023.09,0,0],
+["Nepean",0,0,300.00,0],
+["New Haven",0,1800.00,0,0],
+["North Granville",938.10,0,0,0],
+["North Wiltshire",1388.10,2319.60,300.00,0],
+["North York",0,1578.34,0,0],
+["OLeary",2152.40,555.16,0,0],
+["Orwell Cove",410.56,0,0,0],
+["Ottawa",821.12,789.17,0,0],
+["Pinette",277.54,0,0,0],
+["Rice Point",0,1231.03,0,0],
+["Richmond",605.08,1313.41,0,0],
+["Rustico",600.00,0,0,0],
+["Saint John",0,538.28,0,0],
+["Seaview",0,0,0,500.00],
+["Sidney",0,0,0,700.00],
+["Souris",1476.22,1379.45,0,0],
+["South Winsloe",0,2123.88,0,0],
+["St Catherines",0,280.85,0,0],
+["St Peters Bay",1255.08,1233.61,300.00,0],
+["Stanhope",1100.00,0,0,0],
+["Stratford",15345.11,10242.90,0,1340.00],
+["Summerside",13467.24,15699.36,0,1000.00],
+["Tignish",5671.80,4984.99,0,0],
+["Toronto",3000.00,6058.31,0,0],
+["Valley",500.00,0,0,0],
+["Vernon Bridge",1127.54,2073.20,0,0],
+["Village Green",1000.00,1142.77,0,0],
+["Warren Grove",0,0,0,400.00],
+["Websters Corner",0,726.24,0,0],
+["Wellington",925.16,870.41,0,0],
+["Wellington Station",0,3262.11,0,0],
+["York",410.56,8570.10,0,440.00],
+
+      ]);
+
+    var options = {
+      isStacked: 'relative',
+      legend: {position: 'top'},
+      height: 500,
+      width: 1400,
+      vAxis: {
+        minValue: 0,
+        ticks: [0, .3, .6, .9, 1]
+      },
+      chartArea: {
+        left: 60,
+        top: 50,
+        width: 1400,
+        height: 350
+      }
+    };
+
+    var chart = new google.visualization.SteppedAreaChart(document.getElementById('chart_div'));
+    chart.draw(data, options);
+  }
+</script>
+
+</head>
+
+<!--         body       -->
+
+<body>
+<div align="center" style="font-size: medium;">A visualization of Elections PEI data set: <a href="http://www.electionspei.ca/index.php?number=1046908&lang=E">"lists of contributions in excess of $250 for year 2017"<a></div>
+<div align="center" style="font-size: medium;">Contains information licenced under the <a
+href="http://www.gov.pe.ca/photos/original/EPEI_ODLICENCE.pdf">Elections PEI Open Data Licence<a>.</div>
+<br/>
+
+<div align="center" style="font-size: small; font-weight: bold;">For every city, show the contributions per party as fraction of the total.</div>
+<div align="center" style="font-size: small;">Hover over a section for the amount.</div>
+<div align="center" style="font-size: small;">e.g. Charlottetown contributions are 28% PC, 64% Liberal, 2% NDP, 4% Green</div>
+<div align="center" style="font-size: small;"><a href="https://github.com/peidevs/OpenDataBookClub/blob/master/doc/LocalResources.md">Other visualizations here</a></div>
+<br/>
+
+<div align="right" style="font-size: small;">by <a href="http://peidevs.github.io/">PEI Developers</a></div>
+<div align="right" style="font-size: small;">extracted data <a href="https://github.com/peidevs/OpenData/tree/master/data/Elections_PEI/contributions/2017/data/original/EPEI_2017">here</a> & source <a href="https://github.com/peidevs/OpenData/tree/master/data/Elections_PEI/contributions/2017">here</a></div>
+<div align="right" style="font-size: small;">uses <a href="https://developers.google.com/chart/interactive/docs/gallery/table">Google Charts</a></div>
+
+<hr/>
+
+<div id="chart_div"></div>
+
+</body>
+
+</html>
