@@ -9,6 +9,7 @@
 
 * [run.sh](run.sh) begins with the original data and ultimately generates the validation. Steps:
     * remove headers from original CSV files
+    * normalize the data into a standard format
     * join CSV files into `all_2017.csv`
     * perform verification to double-check the amounts in the new file match the amounts in the original file, per party
     * generate the final [table.html](viz/table.html)
