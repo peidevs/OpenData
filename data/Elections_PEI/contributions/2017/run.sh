@@ -1,6 +1,7 @@
 #!/bin/bash
 
 HEADER_CSV=$PWD/data/header.csv
+CITY_GEO_CSV=$PWD/data/city.geo.sorted.csv
 SRC=src
 ORIGINAL=data/original
 FULL=data/full
@@ -90,5 +91,17 @@ groovy $SRC/VerifyByCity.groovy $STANDARD/all_2017.csv $STANDARD/bycity_2017.dat
 # ---------- generate
 
 groovy $SRC/GenerateByCityViz.groovy $STANDARD/bycity_2017.data $VIZ/template_bycity.html $VIZ/bycity.html
+
+# ---------- by city, west to east
+
+groovy $SRC/ByCityWestToEast.groovy $STANDARD/all_2017.csv $CITY_GEO_CSV > $STANDARD/bycity_westeast_2017.data
+
+# ---------- verify
+
+groovy $SRC/VerifyByCity.groovy $STANDARD/all_2017.csv $STANDARD/bycity_westeast_2017.data
+
+# ---------- generate
+
+groovy $SRC/GenerateByCityViz.groovy $STANDARD/bycity_westeast_2017.data $VIZ/template_bycity.html $VIZ/bycity_westeast.html
 
 echo "Ready."

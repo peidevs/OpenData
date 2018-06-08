@@ -18,6 +18,8 @@
         * this is a list of donations in excess of $250 to multiple parties, where the names are similar
     * generate [bycity.html](viz/bycity.html)
         * this is a stepped-area chart that shows, for each city, the breakdown of party contributions
+    * generate [bycity_westeast.html](viz/bycity_westeast.html)
+        * as above, except cities are sorted from west to east
  
 ### License
 
